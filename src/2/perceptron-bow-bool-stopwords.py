@@ -6,13 +6,15 @@ from re import split
 import sys 																				
 from sklearn.linear_model import Perceptron	
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
 from nltk.corpus import stopwords
 
 #############################################################################
 #Misc INIT
 dirList=[1,2,3,4,5,6,7,8,9,10]
 dirList.remove(int(sys.argv[1]))
-count_vectorizer = CountVectorizer(binary=True)
+count_vectorizer = CountVectorizer()
+tf_transformer = TfidfTransformer(sublinear_tf=True)
 classifier = Perceptron()
 stop = stopwords.words('english')
 
@@ -40,7 +42,7 @@ for n in range(len(mails)):
   text = ' '.join(words)
   mails[n]['text'] = text
 
-train_counts = count_vectorizer.fit_transform([i['text'] for i in mails])
+train_counts = tf_transformer.fit_transform(count_vectorizer.fit_transform([i['text'] for i in mails]))
 train_labels = [(i['category']=='nspam') for i in mails]
 
 ##############################################################################
@@ -67,7 +69,7 @@ for n in range(len(test_mails)):
   text = ' '.join(words)
   test_mails[n]['text'] = text
 
-test_counts		 = count_vectorizer.transform([i['text'] for i in test_mails])
+test_counts		 = tf_transformer.fit_transform(count_vectorizer.transform([i['text'] for i in test_mails]))
 test_labels      = [(i['category']=='nspam') for i in test_mails ]
 
 ###############################################################################

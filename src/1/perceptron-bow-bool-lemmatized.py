@@ -12,7 +12,7 @@ from nltk.stem import WordNetLemmatizer
 #Misc INIT
 dirList=[1,2,3,4,5,6,7,8,9,10]
 dirList.remove(int(sys.argv[1]))
-count_vectorizer = CountVectorizer()
+count_vectorizer = CountVectorizer(binary=True)
 classifier = Perceptron()
 stop = stopwords.words('english')
 lemmatizer=WordNetLemmatizer()
