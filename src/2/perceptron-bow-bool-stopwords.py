@@ -69,7 +69,7 @@ for n in range(len(test_mails)):
   text = ' '.join(words)
   test_mails[n]['text'] = text
 
-test_counts		 = tf_transformer.fit_transform(count_vectorizer.transform([i['text'] for i in test_mails]))
+test_counts		 = tf_transformer.transform(count_vectorizer.transform([i['text'] for i in test_mails]))
 test_labels      = [(i['category']=='nspam') for i in test_mails ]
 
 ###############################################################################
