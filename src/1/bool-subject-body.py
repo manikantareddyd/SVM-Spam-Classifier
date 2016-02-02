@@ -6,16 +6,13 @@ from re import split
 import sys 																				
 from sklearn.linear_model import Perceptron	
 from sklearn.feature_extraction.text import CountVectorizer
-from nltk.corpus import stopwords
-
+from sklearn.metrics import *
 #############################################################################
 #Misc INIT
 dirList=[1,2,3,4,5,6,7,8,9,10]
 dirList.remove(int(sys.argv[1]))
 count_vectorizer = CountVectorizer(binary=True)
 classifier = Perceptron()
-stop = stopwords.words('english')
-
 #############################################################################
 All_files=[]
 for i in dirList:
@@ -36,8 +33,6 @@ for i in All_files:
 for n in range(len(mails)):
   html = mails[n]['mail']
   text = ' '.join(BS(html).findAll(text=True))
-  words =[i for i in split('\W+', text) if i not in stop]
-  text = ' '.join(words)
   mails[n]['text'] = text
 
 train_counts = count_vectorizer.fit_transform([i['text'] for i in mails])
@@ -63,8 +58,6 @@ for i in test_files:
 for n in range(len(test_mails)):
   html = test_mails[n]['mail']
   text = ' '.join(BS(html).findAll(text=True))
-  words =[i for i in split('\W+', text) if i not in stop]
-  text = ' '.join(words)
   test_mails[n]['text'] = text
 
 test_counts		 = count_vectorizer.transform([i['text'] for i in test_mails])
@@ -72,7 +65,7 @@ test_labels      = [(i['category']=='nspam') for i in test_mails ]
 
 ###############################################################################
 
-classifier.fit(train_counts,train_labels)
+classifier.fit(train_counts.toarray(),train_labels)
 
 ################################################################################
 
@@ -82,8 +75,10 @@ c_ns=0
 c_ws=0
 c_wns=0
 
+predicted_labels=[]
 for i in range(len(test_mails)):
-	t_value = classifier.predict(test_counts[i])
+	t_value = classifier.predict(test_counts[i].toarray())
+	predicted_labels.append(int(t_value))
 	if test_labels[i]==0: 
 		c_s=c_s+1
 	else:
@@ -98,7 +93,8 @@ for i in range(len(test_mails)):
 
 ################################################################################
 
-print "#######################################"
+
+print "*"*60
 print "Running on part",sys.argv[1]
 print "Total Mails:",len(test_mails)
 print "Total Spam:", c_s
@@ -106,3 +102,7 @@ print "Total nSpam:", c_ns
 print "Total Misclassified:"+str(c)
 print "Misclassified Spam:"+str(c_ws)
 print "Misclassified nSpam:"+str(c_wns)
+print "\nConfusion Matrix"
+print confusion_matrix(test_labels,predicted_labels, labels = [0,1])
+print "\nClassification Report\n",classification_report(test_labels,predicted_labels,target_names=['spam','nSpam'])
+print "*"*60

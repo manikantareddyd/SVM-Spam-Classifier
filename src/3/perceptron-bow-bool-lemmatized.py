@@ -9,6 +9,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+from sklearn.metrics import *
 #############################################################################
 #Misc INIT
 dirList=[1,2,3,4,5,6,7,8,9,10]
@@ -85,8 +86,10 @@ c_ns=0
 c_ws=0
 c_wns=0
 
+predicted_labels=[]
 for i in range(len(test_mails)):
-	t_value = classifier.predict(test_counts[i])
+	t_value = classifier.predict(test_counts[i].toarray())
+	predicted_labels.append(int(t_value))
 	if test_labels[i]==0: 
 		c_s=c_s+1
 	else:
@@ -101,7 +104,8 @@ for i in range(len(test_mails)):
 
 ################################################################################
 
-print "#######################################"
+
+print "*"*60
 print "Running on part",sys.argv[1]
 print "Total Mails:",len(test_mails)
 print "Total Spam:", c_s
@@ -109,3 +113,7 @@ print "Total nSpam:", c_ns
 print "Total Misclassified:"+str(c)
 print "Misclassified Spam:"+str(c_ws)
 print "Misclassified nSpam:"+str(c_wns)
+print "\nConfusion Matrix"
+print confusion_matrix(test_labels,predicted_labels, labels = [0,1])
+print "\nClassification Report\n",classification_report(test_labels,predicted_labels,target_names=['spam','nSpam'])
+print "*"*60
