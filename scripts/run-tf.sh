@@ -1,0 +1,32 @@
+python src/Bow-tf/lemmatized.py 1 >> Results/Bow-tf/lemmatized.txt
+python src/Bow-tf/lemmatized.py 2 >> Results/Bow-tf/lemmatized.txt
+python src/Bow-tf/lemmatized.py 3 >> Results/Bow-tf/lemmatized.txt
+python src/Bow-tf/lemmatized.py 4 >> Results/Bow-tf/lemmatized.txt
+python src/Bow-tf/lemmatized.py 5 >> Results/Bow-tf/lemmatized.txt
+python src/Bow-tf/lemmatized.py 6 >> Results/Bow-tf/lemmatized.txt
+python src/Bow-tf/lemmatized.py 7 >> Results/Bow-tf/lemmatized.txt
+python src/Bow-tf/lemmatized.py 8 >> Results/Bow-tf/lemmatized.txt
+python src/Bow-tf/lemmatized.py 9 >> Results/Bow-tf/lemmatized.txt
+python src/Bow-tf/lemmatized.py 10 >> Results/Bow-tf/lemmatized.txt
+
+python src/Bow-tf/stopwords.py 1 >> Results/Bow-tf/stopwords.txt
+python src/Bow-tf/stopwords.py 2 >> Results/Bow-tf/stopwords.txt
+python src/Bow-tf/stopwords.py 3 >> Results/Bow-tf/stopwords.txt
+python src/Bow-tf/stopwords.py 4 >> Results/Bow-tf/stopwords.txt
+python src/Bow-tf/stopwords.py 5 >> Results/Bow-tf/stopwords.txt
+python src/Bow-tf/stopwords.py 6 >> Results/Bow-tf/stopwords.txt
+python src/Bow-tf/stopwords.py 7 >> Results/Bow-tf/stopwords.txt
+python src/Bow-tf/stopwords.py 8 >> Results/Bow-tf/stopwords.txt
+python src/Bow-tf/stopwords.py 9 >> Results/Bow-tf/stopwords.txt
+python src/Bow-tf/stopwords.py 10 >> Results/Bow-tf/stopwords.txt
+
+python src/Bow-tf/subject-body.py 1 >> Results/Bow-tf/subject-body.txt
+python src/Bow-tf/subject-body.py 2 >> Results/Bow-tf/subject-body.txt
+python src/Bow-tf/subject-body.py 3 >> Results/Bow-tf/subject-body.txt
+python src/Bow-tf/subject-body.py 4 >> Results/Bow-tf/subject-body.txt
+python src/Bow-tf/subject-body.py 5 >> Results/Bow-tf/subject-body.txt
+python src/Bow-tf/subject-body.py 6 >> Results/Bow-tf/subject-body.txt
+python src/Bow-tf/subject-body.py 7 >> Results/Bow-tf/subject-body.txt
+python src/Bow-tf/subject-body.py 8 >> Results/Bow-tf/subject-body.txt
+python src/Bow-tf/subject-body.py 9 >> Results/Bow-tf/subject-body.txt
+python src/Bow-tf/subject-body.py 10 >> Results/Bow-tf/subject-body.txt
