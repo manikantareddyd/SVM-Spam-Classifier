@@ -15,7 +15,7 @@ from sklearn.metrics import *
 dirList=[1,2,3,4,5,6,7,8,9,10]
 dirList.remove(int(sys.argv[1]))
 count_vectorizer = CountVectorizer()
-tf_transformer = TfidfTransformer(use_idf=True)
+tf_transformer = TfidfTransformer(use_idf=True,sublinear_tf=True,smooth_idf=True)
 classifier = Perceptron()
 stop = stopwords.words('english')
 lemmatizer=WordNetLemmatizer()

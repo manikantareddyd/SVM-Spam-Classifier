@@ -12,8 +12,8 @@ from sklearn.metrics import *
 #Misc INIT
 dirList=[1,2,3,4,5,6,7,8,9,10]
 dirList.remove(int(sys.argv[1]))
-count_vectorizer = CountVectorizer()
-tf_transformer = TfidfTransformer(sublinear_tf=True)
+count_vectorizer = CountVectorizer(binary=False)
+tf_transformer = TfidfTransformer(sublinear_tf=True,norm="l2")
 classifier = Perceptron()
 #############################################################################
 All_files=[]

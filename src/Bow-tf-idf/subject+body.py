@@ -3,21 +3,18 @@ from os import listdir
 from email import message_from_string
 from BeautifulSoup import BeautifulSoup as BS
 from re import split
-import sys 																				
-from sklearn.linear_model import Perceptron	
+import sys 		
+from sklearn.linear_model import Perceptron		
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
-from nltk.corpus import stopwords
 from sklearn.metrics import *
 #############################################################################
 #Misc INIT
 dirList=[1,2,3,4,5,6,7,8,9,10]
 dirList.remove(int(sys.argv[1]))
 count_vectorizer = CountVectorizer()
-tf_transformer = TfidfTransformer(use_idf=True)
+tf_transformer = TfidfTransformer(use_idf=True,smooth_idf=True,sublinear_tf=True)
 classifier = Perceptron()
-stop = stopwords.words('english')
-
 #############################################################################
 All_files=[]
 for i in dirList:
@@ -38,8 +35,6 @@ for i in All_files:
 for n in range(len(mails)):
   html = mails[n]['mail']
   text = ' '.join(BS(html).findAll(text=True))
-  words =[i for i in split('\W+', text) if i not in stop]
-  text = ' '.join(words)
   mails[n]['text'] = text
 
 train_counts = tf_transformer.fit_transform(count_vectorizer.fit_transform([i['text'] for i in mails]))
@@ -65,8 +60,6 @@ for i in test_files:
 for n in range(len(test_mails)):
   html = test_mails[n]['mail']
   text = ' '.join(BS(html).findAll(text=True))
-  words =[i for i in split('\W+', text) if i not in stop]
-  text = ' '.join(words)
   test_mails[n]['text'] = text
 
 test_counts		 = tf_transformer.transform(count_vectorizer.transform([i['text'] for i in test_mails]))

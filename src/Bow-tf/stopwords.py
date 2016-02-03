@@ -8,17 +8,15 @@ from sklearn.linear_model import Perceptron
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
 from sklearn.metrics import *
 #############################################################################
 #Misc INIT
 dirList=[1,2,3,4,5,6,7,8,9,10]
 dirList.remove(int(sys.argv[1]))
-count_vectorizer = CountVectorizer()
-tf_transformer = TfidfTransformer(sublinear_tf=True)
+count_vectorizer = CountVectorizer(binary=False)
+tf_transformer = TfidfTransformer(sublinear_tf=True,norm="l2")
 classifier = Perceptron()
 stop = stopwords.words('english')
-lemmatizer=WordNetLemmatizer()
 
 #############################################################################
 All_files=[]
@@ -40,7 +38,7 @@ for i in All_files:
 for n in range(len(mails)):
   html = mails[n]['mail']
   text = ' '.join(BS(html).findAll(text=True))
-  words =[lemmatizer.lemmatize(i) for i in split('\W+', text) if i not in stop]
+  words =[i for i in split('\W+', text) if i not in stop]
   text = ' '.join(words)
   mails[n]['text'] = text
 
@@ -67,7 +65,7 @@ for i in test_files:
 for n in range(len(test_mails)):
   html = test_mails[n]['mail']
   text = ' '.join(BS(html).findAll(text=True))
-  words =[lemmatizer.lemmatize(i) for i in split('\W+', text) if i not in stop]
+  words =[i for i in split('\W+', text) if i not in stop]
   text = ' '.join(words)
   test_mails[n]['text'] = text
 
@@ -79,6 +77,7 @@ test_labels      = [(i['category']=='nspam') for i in test_mails ]
 classifier.fit(train_counts,train_labels)
 
 ################################################################################
+
 c=0
 c_s=0
 c_ns=0
