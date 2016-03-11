@@ -1,0 +1,32 @@
+python src/HingeLoss/Bow-tf/lemmatized.py 1 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+python src/HingeLoss/Bow-tf/lemmatized.py 2 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+python src/HingeLoss/Bow-tf/lemmatized.py 3 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+python src/HingeLoss/Bow-tf/lemmatized.py 4 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+python src/HingeLoss/Bow-tf/lemmatized.py 5 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+python src/HingeLoss/Bow-tf/lemmatized.py 6 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+python src/HingeLoss/Bow-tf/lemmatized.py 7 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+python src/HingeLoss/Bow-tf/lemmatized.py 8 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+python src/HingeLoss/Bow-tf/lemmatized.py 9 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+python src/HingeLoss/Bow-tf/lemmatized.py 10 >> Results/HingeLoss/Bow-tf/lemmatized.txt
+
+python src/HingeLoss/Bow-tf/stopwords.py 1 >> Results/HingeLoss/Bow-tf/stopwords.txt
+python src/HingeLoss/Bow-tf/stopwords.py 2 >> Results/HingeLoss/Bow-tf/stopwords.txt
+python src/HingeLoss/Bow-tf/stopwords.py 3 >> Results/HingeLoss/Bow-tf/stopwords.txt
+python src/HingeLoss/Bow-tf/stopwords.py 4 >> Results/HingeLoss/Bow-tf/stopwords.txt
+python src/HingeLoss/Bow-tf/stopwords.py 5 >> Results/HingeLoss/Bow-tf/stopwords.txt
+python src/HingeLoss/Bow-tf/stopwords.py 6 >> Results/HingeLoss/Bow-tf/stopwords.txt
+python src/HingeLoss/Bow-tf/stopwords.py 7 >> Results/HingeLoss/Bow-tf/stopwords.txt
+python src/HingeLoss/Bow-tf/stopwords.py 8 >> Results/HingeLoss/Bow-tf/stopwords.txt
+python src/HingeLoss/Bow-tf/stopwords.py 9 >> Results/HingeLoss/Bow-tf/stopwords.txt
+python src/HingeLoss/Bow-tf/stopwords.py 10 >> Results/HingeLoss/Bow-tf/stopwords.txt
+
+python src/HingeLoss/Bow-tf/subject-body.py 1 >> Results/HingeLoss/Bow-tf/subject-body.txt
+python src/HingeLoss/Bow-tf/subject-body.py 2 >> Results/HingeLoss/Bow-tf/subject-body.txt
+python src/HingeLoss/Bow-tf/subject-body.py 3 >> Results/HingeLoss/Bow-tf/subject-body.txt
+python src/HingeLoss/Bow-tf/subject-body.py 4 >> Results/HingeLoss/Bow-tf/subject-body.txt
+python src/HingeLoss/Bow-tf/subject-body.py 5 >> Results/HingeLoss/Bow-tf/subject-body.txt
+python src/HingeLoss/Bow-tf/subject-body.py 6 >> Results/HingeLoss/Bow-tf/subject-body.txt
+python src/HingeLoss/Bow-tf/subject-body.py 7 >> Results/HingeLoss/Bow-tf/subject-body.txt
+python src/HingeLoss/Bow-tf/subject-body.py 8 >> Results/HingeLoss/Bow-tf/subject-body.txt
+python src/HingeLoss/Bow-tf/subject-body.py 9 >> Results/HingeLoss/Bow-tf/subject-body.txt
+python src/HingeLoss/Bow-tf/subject-body.py 10 >> Results/HingeLoss/Bow-tf/subject-body.txt

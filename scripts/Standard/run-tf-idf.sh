@@ -1,0 +1,32 @@
+python src/Standard/Bow-tf-idf/lemmatized.py 1 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+python src/Standard/Bow-tf-idf/lemmatized.py 2 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+python src/Standard/Bow-tf-idf/lemmatized.py 3 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+python src/Standard/Bow-tf-idf/lemmatized.py 4 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+python src/Standard/Bow-tf-idf/lemmatized.py 5 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+python src/Standard/Bow-tf-idf/lemmatized.py 6 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+python src/Standard/Bow-tf-idf/lemmatized.py 7 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+python src/Standard/Bow-tf-idf/lemmatized.py 8 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+python src/Standard/Bow-tf-idf/lemmatized.py 9 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+python src/Standard/Bow-tf-idf/lemmatized.py 10 >> Results/Standard/Bow-tf-idf/lemmatized.txt
+
+python src/Standard/Bow-tf-idf/stopwords.py 1 >> Results/Standard/Bow-tf-idf/stopwords.txt
+python src/Standard/Bow-tf-idf/stopwords.py 2 >> Results/Standard/Bow-tf-idf/stopwords.txt
+python src/Standard/Bow-tf-idf/stopwords.py 3 >> Results/Standard/Bow-tf-idf/stopwords.txt
+python src/Standard/Bow-tf-idf/stopwords.py 4 >> Results/Standard/Bow-tf-idf/stopwords.txt
+python src/Standard/Bow-tf-idf/stopwords.py 5 >> Results/Standard/Bow-tf-idf/stopwords.txt
+python src/Standard/Bow-tf-idf/stopwords.py 6 >> Results/Standard/Bow-tf-idf/stopwords.txt
+python src/Standard/Bow-tf-idf/stopwords.py 7 >> Results/Standard/Bow-tf-idf/stopwords.txt
+python src/Standard/Bow-tf-idf/stopwords.py 8 >> Results/Standard/Bow-tf-idf/stopwords.txt
+python src/Standard/Bow-tf-idf/stopwords.py 9 >> Results/Standard/Bow-tf-idf/stopwords.txt
+python src/Standard/Bow-tf-idf/stopwords.py 10 >> Results/Standard/Bow-tf-idf/stopwords.txt
+
+python src/Standard/Bow-tf-idf/subject-body.py 1 >> Results/Standard/Bow-tf-idf/subject-body.txt
+python src/Standard/Bow-tf-idf/subject-body.py 2 >> Results/Standard/Bow-tf-idf/subject-body.txt
+python src/Standard/Bow-tf-idf/subject-body.py 3 >> Results/Standard/Bow-tf-idf/subject-body.txt
+python src/Standard/Bow-tf-idf/subject-body.py 4 >> Results/Standard/Bow-tf-idf/subject-body.txt
+python src/Standard/Bow-tf-idf/subject-body.py 5 >> Results/Standard/Bow-tf-idf/subject-body.txt
+python src/Standard/Bow-tf-idf/subject-body.py 6 >> Results/Standard/Bow-tf-idf/subject-body.txt
+python src/Standard/Bow-tf-idf/subject-body.py 7 >> Results/Standard/Bow-tf-idf/subject-body.txt
+python src/Standard/Bow-tf-idf/subject-body.py 8 >> Results/Standard/Bow-tf-idf/subject-body.txt
+python src/Standard/Bow-tf-idf/subject-body.py 9 >> Results/Standard/Bow-tf-idf/subject-body.txt
+python src/Standard/Bow-tf-idf/subject-body.py 10 >> Results/Standard/Bow-tf-idf/subject-body.txt
