@@ -3,8 +3,8 @@ from os import listdir
 from email import message_from_string
 from BeautifulSoup import BeautifulSoup as BS
 from re import split
-import sys 																				
-from sklearn.linear_model import Perceptron	
+import sys
+from sklearn.svm import LinearSVC
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import *
 #############################################################################
@@ -12,7 +12,7 @@ from sklearn.metrics import *
 dirList=[1,2,3,4,5,6,7,8,9,10]
 dirList.remove(int(sys.argv[1]))
 count_vectorizer = CountVectorizer(binary=True)
-classifier = Perceptron()
+classifier = LinearSVC()
 #############################################################################
 All_files=[]
 for i in dirList:
@@ -25,7 +25,7 @@ for i in All_files:
 		mails.append(
 			dict(mail=open(i,'r').read().strip(), category='spam')
 			)
-	else:	
+	else:
 		mails.append(
 			dict(mail=open(i,'r').read().strip(), category='nspam')
 			)
@@ -79,7 +79,7 @@ predicted_labels=[]
 for i in range(len(test_mails)):
 	t_value = classifier.predict(test_counts[i].toarray())
 	predicted_labels.append(int(t_value))
-	if test_labels[i]==0: 
+	if test_labels[i]==0:
 		c_s=c_s+1
 	else:
 		c_ns=c_ns+1
